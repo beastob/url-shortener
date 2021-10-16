@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: cfdee891d75ae31d58506a2e28a4cd3e
+    ports:
+      - 5432:5432
+  app:
+    image: beastob/url-shortener
+    restart: always
+    environment:
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: cfdee891d75ae31d58506a2e28a4cd3e
+      DATABASE_DB_NAME: postgres
+    ports:
+      - 8080:8080
