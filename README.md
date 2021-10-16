@@ -1,3 +1,15 @@
+# Compile source code
+
+```shell
+# clean build and skip test
+./gradlew clean build -x test
+```
+
+# Build Docker image
+
+```shell
+docker build -t url-shortener -f Dockerfile .
+```
 # Run Application using docker-compose (standalone)
 
 ---
